@@ -8,18 +8,22 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // Function to fetch a joke
-  function fetchJoke() {
-    setLoading(true); // - Start by setting `loading` to true
-    fetch("https://v2.jokeapi.dev/joke/Programming?type=single") //Fetch the joke
-      .then((response) => response.json())
-      .then((data) => {
-        setJoke(data.joke);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching joke:", error);
-        setLoading(false);
-      });
+  async function fetchJoke() {
+    setLoading(true);
+    try {
+   const response = await fetch('https://v2.jokeapi.dev/joke/Programming?type=single');
+    const data = await response.json();
+    setJoke(data.joke);
+    setLoading(false);      
+    }
+    catch (error) {
+      console.error("Error fetching joke:", error);
+      setJoke("Failed to load joke. Please try again!");
+    }
+    finally {
+      setLoading(false);
+    }
+    
   }
 
   // Step 2: Use `useEffect` to call a function that fetches a joke when the component mounts
