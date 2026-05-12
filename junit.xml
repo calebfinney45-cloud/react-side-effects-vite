@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="3" failures="0" errors="0" time="0.059010999">
+    <testsuite name="src/__tests__/App.test.jsx" timestamp="2026-05-12T11:56:39.805Z" hostname="DESKTOP-2U0I8LU" tests="3" failures="0" errors="0" skipped="0" time="0.059010999">
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; displays a loading message before joke is loaded" time="0.040685277">
+        </testcase>
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; fetches and displays a joke on load" time="0.006299697">
+        </testcase>
+        <testcase classname="src/__tests__/App.test.jsx" name="App component &gt; fetches a new joke when button is clicked" time="0.011010354">
+        </testcase>
+    </testsuite>
+</testsuites>
