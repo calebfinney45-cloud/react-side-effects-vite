@@ -1,29 +1,25 @@
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect } from 'react'
 import JokeDisplay from './components/JokeDisplay'
 import FetchButton from './components/FetchButton'
 
 function App() {
   // Step 1: Create state variables for `joke` and `loading`
   const [joke, setJoke] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // Function to fetch a joke
   async function fetchJoke() {
     setLoading(true);
     try {
-   const response = await fetch('https://v2.jokeapi.dev/joke/Programming?type=single');
-    const data = await response.json();
-    setJoke(data.joke);
-    setLoading(false);      
-    }
-    catch (error) {
+      const response = await fetch('https://v2.jokeapi.dev/joke/Programming?type=single');
+      const data = await response.json();
+      setJoke(data.joke);
+    } catch (error) {
       console.error("Error fetching joke:", error);
       setJoke("Failed to load joke. Please try again!");
-    }
-    finally {
+    } finally {
       setLoading(false);
     }
-    
   }
 
   // Step 2: Use `useEffect` to call a function that fetches a joke when the component mounts
