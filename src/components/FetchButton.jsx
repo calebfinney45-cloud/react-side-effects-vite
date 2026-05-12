@@ -6,7 +6,7 @@ const FetchButton = ({ fetchJoke }) => {
     <button className="fetch-button" onClick={fetchJoke}>
       Get a New Joke
     </button>
-  )
-}
+  );
+};
 
-export default FetchButton
+export default FetchButton;

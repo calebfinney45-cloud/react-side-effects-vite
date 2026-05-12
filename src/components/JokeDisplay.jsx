@@ -7,7 +7,7 @@ const JokeDisplay = ({ joke, loading }) => {
       {/* Step 3: Otherwise, display the joke */}
       {loading ? <p>Loading...</p> : <p>{joke}</p>}
     </div>
-  )
-}
+  );
+};
 
-export default JokeDisplay
+export default JokeDisplay;
